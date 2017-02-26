@@ -1,0 +1,28 @@
+version: '2'
+
+services:
+    php:
+        build: php7-fpm
+        ports:
+            - 9000:9000
+            - 9002:9002
+        volumes:
+            - /var/www/symfony
+    nginx:
+        build: nginx
+        ports:
+            - 80:80
+        links:
+            - php
+        volumes_from:
+            - php
+# UNCOMMENT IF YOU ARE ON MAC OS (prevent slow folder sync)
+#    bg-sync:
+#        image: cweagans/bg-sync
+#        volumes:
+#          - ..:/source
+#        volumes_from:
+#          - php
+#        environment:
+#          - SYNC_DESTINATION=/var/www/symfony
+#          - SYNC_VERBOSE=1
