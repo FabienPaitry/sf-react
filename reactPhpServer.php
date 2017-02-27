@@ -6,14 +6,10 @@
  * Time: 16:12
  */
 
-use Symfony\Component\Debug\Debug;
-
 /** @var \Composer\Autoload\ClassLoader $loader */
 $loader = require __DIR__ . '/app/autoload.php';
 
-Debug::enable();
-
-$kernel = new AppKernel('dev', true);
+$kernel = new AppKernel('prod', false);
 
 
 $callback = function ($request, $response) use ($kernel) {
