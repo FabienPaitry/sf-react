@@ -2,3 +2,7 @@
 upstream php-upstream {
     server ${PHP_HOST}:9000;
 }
+
+upstream react-upstream {
+    server ${PHP_HOST}:9090;
+}
