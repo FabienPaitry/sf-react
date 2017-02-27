@@ -45,7 +45,7 @@ class DateService
     /**
      * @return string
      */
-    public function getDateTime()
+    public function getDateTime(): ?string
     {
         return $this->getDateProvider()
             ->getDateTime()
