@@ -9,7 +9,7 @@
 namespace AppBundle\Provider;
 
 
-class DateProvider
+class DateProvider implements DateProviderInterface
 {
     /**
      * @return \DateTime
