@@ -19,7 +19,7 @@ class DefaultController extends Controller
             'default/index.html.twig',
             [
                 'timezone' => $this->getDateService()->getTimeZone(),
-                'datetime' => $this->getDateService()->getDateTime(),
+                'datetime' => $this->getDateService()->getDateTime('d/m/Y H:i:s'),
             ]
         );
     }

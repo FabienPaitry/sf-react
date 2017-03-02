@@ -43,13 +43,19 @@ class DateService
     }
 
     /**
+     * @param string $format
      * @return string
+     * @throws \InvalidArgumentException
      */
-    public function getDateTime(): ?string
+    public function getDateTime(string $format): ?string
     {
+        if (null == $format) {
+            throw new \InvalidArgumentException();
+        }
+
         return $this->getDateProvider()
             ->getDateTime()
-            ->format('d/m/Y H:i:s');
+            ->format($format);
     }
 
 }
